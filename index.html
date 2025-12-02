@@ -1,1 +1,342 @@
-<!-- arquivo criado. Cole o conteúdo completo aqui depois -->
+<!--
+README (use este texto no arquivo README.md do repositório "meu-portfolio-profissional")
+
+# Meu Portfólio Profissional
+
+**Nome:** NOME COMPLETO AQUI
+
+**Foto:** substitua a imagem em /assets/photo.jpg por sua foto profissional
+
+**Mini-bio (3–5 linhas):**
+Sou [sua profissão] com experiência em [tecnologias-chave]. Gosto de construir soluções que entregam valor real ao usuário e escalam bem. Busco oportunidades remotas e desafiadoras em times que valorizem qualidade e colaboração.
+
+**Principais habilidades:**
+- HTML, CSS, JavaScript
+- React / Vite (ou outra stack que você usar)
+- Node.js / Python / Banco de dados
+- Git, GitHub, testes
+
+**Projetos em destaque:**
+- Projeto A — breve descrição. Link: https://github.com/seu-usuario/projeto-a
+- Projeto B — breve descrição. Link: https://github.com/seu-usuario/projeto-b
+
+**Objetivo profissional atual:** Conquistar vaga remota como desenvolvedor pleno/sênior em equipe focada em [área].
+
+**Contatos:**
+- LinkedIn: https://linkedin.com/in/seu-usuario
+- E-mail: seu.email@exemplo.com
+- GitHub: https://github.com/seu-usuario
+
+**Frase que me representa:** "Transformo ideias em código e impacto." 
+
+INSTRUÇÕES RÁPIDAS DE DEPLOY
+1. Crie o repositório no GitHub com o nome `meu-portfolio-profissional`.
+2. Faça upload deste arquivo como `index.html` e crie uma pasta `assets/` com sua foto `photo.jpg` e prints dos projetos.
+3. No GitHub: Settings > Pages > Source: `main` branch / root. Salve e aguarde o site publicar em `https://seu-usuario.github.io/meu-portfolio-profissional`.
+
+--> 
+
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Portfólio — Seu Nome</title>
+  <meta name="description" content="Portfólio profissional — Seu Nome. Projetos, habilidades e contato.">
+  <style>
+    :root{
+      --bg:#0b0b0b; /* near black */
+      --card:#111111;
+      --accent:#c8102e; /* vivid red */
+      --muted:#bdbdbd;
+      --glass: rgba(255,255,255,0.03);
+      --max-width:1100px;
+      --radius:14px;
+      --ff: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:var(--ff); background:linear-gradient(180deg,#050505 0%, #0d0d0d 100%); color:#fff; -webkit-font-smoothing:antialiased;
+    }
+    .container{max-width:var(--max-width); margin:28px auto; padding:24px}
+    header{
+      display:flex; align-items:center; justify-content:space-between; gap:16px; padding:12px 16px; background:transparent;
+    }
+    .brand{display:flex; gap:12px; align-items:center}
+    .logo{
+      width:56px; height:56px; border-radius:10px; background:linear-gradient(135deg,var(--accent),#6b0008); display:flex; align-items:center; justify-content:center; font-weight:700; font-size:18px; box-shadow:0 6px 18px rgba(200,0,0,0.12)
+    }
+    nav a{color:var(--muted); text-decoration:none; margin-left:12px; font-weight:600}
+    nav a:hover{color:var(--accent)}
+
+    /* Hero */
+    .hero{display:grid; grid-template-columns: 1fr 380px; gap:28px; align-items:center; margin-top:18px}
+    .card{background:var(--card); border-radius:var(--radius); padding:24px; box-shadow:0 6px 24px rgba(0,0,0,0.6)}
+    .hero-left h1{margin:0; font-size:32px}
+    .subtitle{color:var(--muted); margin-top:8px}
+    .slogan{display:inline-block; margin-top:14px; background:linear-gradient(90deg, rgba(200,0,0,0.06), rgba(200,0,0,0.02)); color:var(--accent); padding:8px 12px; border-radius:10px; font-weight:700}
+    .cta{margin-top:18px; display:flex; gap:12px}
+    .btn{background:var(--accent); color:#fff; padding:12px 16px; border-radius:10px; text-decoration:none; font-weight:700}
+    .btn.ghost{background:transparent; border:1px solid rgba(255,255,255,0.06)}
+
+    .photo{width:100%; max-width:320px; margin-left:auto; border-radius:12px; overflow:hidden; border:4px solid rgba(200,0,0,0.07)}
+    .photo img{width:100%; height:auto; display:block}
+
+    /* Sections */
+    section{margin-top:24px}
+    .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+    .about p{color:var(--muted); line-height:1.6}
+
+    /* Skills */
+    .skill{display:flex; flex-direction:column; gap:8px}
+    .bar{height:12px; background:var(--glass); border-radius:999px; overflow:hidden}
+    .bar > i{display:block; height:100%; background:linear-gradient(90deg,var(--accent),#ff6b6b); width:60%}
+
+    /* Projects */
+    .projects-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+    .project-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent); padding:14px; border-radius:10px}
+    .project-card img{width:100%; height:150px; object-fit:cover; border-radius:8px}
+    .project-tags{margin-top:8px; display:flex; gap:8px; flex-wrap:wrap}
+    .tag{font-size:12px; padding:6px 8px; border-radius:999px; background:rgba(255,255,255,0.03)}
+
+    /* Contact */
+    .contact-grid{display:grid; grid-template-columns:1fr 360px; gap:18px}
+    form label{display:block; font-weight:700; margin-top:10px}
+    input,textarea{width:100%; padding:10px; margin-top:6px; border-radius:8px; border:1px solid rgba(255,255,255,0.06); background:transparent; color:#fff}
+    .small{font-size:13px; color:var(--muted)}
+
+    footer{margin-top:36px; text-align:center; color:var(--muted); padding:24px}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr;}
+      .projects-grid{grid-template-columns:repeat(2,1fr)}
+      .grid-3{grid-template-columns:repeat(2,1fr)}
+      .contact-grid{grid-template-columns:1fr}
+    }
+    @media (max-width:640px){
+      .projects-grid{grid-template-columns:1fr}
+      nav{display:none}
+      header{padding:8px}
+    }
+
+    /* small helpers */
+    .muted{color:var(--muted)}
+    .pill{padding:6px 10px; border-radius:999px; background:rgba(255,255,255,0.03)}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">SN</div>
+        <div>
+          <div style="font-weight:800">Seu Nome</div>
+          <div class="small muted">Desenvolvedor(a) | Front-end • Full-stack</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#skills">Habilidades</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <div class="hero-left card">
+          <h1>Seu Nome Completo</h1>
+          <div class="subtitle">Sou desenvolvedor(a) focado(a) em criar interfaces elegantes e aplicações performáticas.</div>
+          <div class="slogan">Transformo ideias em código.</div>
+
+          <div class="cta">
+            <a class="btn" href="#projetos">Ver projetos</a>
+            <a class="btn ghost" href="#contato">Contato</a>
+          </div>
+
+          <div style="margin-top:18px; display:flex; gap:12px; align-items:center">
+            <div class="pill">Remoto • Flexível • Disponível</div>
+            <div class="muted" style="margin-left:8px">40s para impressionar um recrutador — foque no destaque.</div>
+          </div>
+        </div>
+
+        <aside class="card" style="display:flex; flex-direction:column; gap:12px; align-items:center;">
+          <div class="photo">
+            <!-- Substitua assets/photo.jpg pela sua foto -->
+            <img src=https://avatars.githubusercontent.com/u/180221344?s=400&u=7ec17138c9de6126c777eeb83930f473fc873de6&v=4 alt="Foto profissional">
+          </div>
+          <div style="text-align:center">
+            <div style="font-weight:800">Seu Nome</div>
+            <div class="muted">Desenvolvedor(a) Front-end • UI/UX</div>
+          </div>
+        </aside>
+      </section>
+
+      <section id="sobre" class="about">
+        <div class="card">
+          <h2>Sobre mim</h2>
+          <p>
+            Comecei minha jornada na tecnologia quando. Estudo desenvolvimento web desde 2024.
+            Gosto de transformar problemas complexos em soluções simples e bem documentadas. Minha forma de resolver problemas: dividir em pequenos passos, prototipar rápido e validar com o usuário.
+          </p>
+
+          <div style="display:flex; gap:16px; margin-top:12px; flex-wrap:wrap">
+            <div class="pill">Trajetória: autodidata + cursos</div>
+            <div class="pill">Meta: vaga remota sênior</div>
+            <div class="pill">Diferencial: atenção a UX e testes</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills">
+        <div class="card">
+          <h2>Habilidades</h2>
+          <div style="display:grid; grid-template-columns:2fr 1fr; gap:20px; align-items:start">
+            <div>
+              <div class="skill">
+                <div style="display:flex; justify-content:space-between"><strong>HTML & CSS</strong><span class="muted">Avançado</span></div>
+                <div class="bar"><i style="width:95%"></i></div>
+              </div>
+
+              <div class="skill" style="margin-top:10px">
+                <div style="display:flex; justify-content:space-between"><strong>JavaScript / python</strong><span class="muted">Avançado</span></div>
+                <div class="bar"><i style="width:88%"></i></div>
+              </div>
+
+              <div class="skill" style="margin-top:10px">
+                <div style="display:flex; justify-content:space-between"><strong>React / Vite</strong><span class="muted">Intermediário</span></div>
+                <div class="bar"><i style="width:80%"></i></div>
+              </div>
+
+              <div class="skill" style="margin-top:10px">
+                <div style="display:flex; justify-content:space-between"><strong>front-end / Back-end</strong><span class="muted">Intermediário</span></div>
+                <div class="bar"><i style="width:68%"></i></div>
+              </div>
+
+            </div>
+            <div>
+              <div style="font-weight:800">Ferramentas</div>
+              <ul class="muted" style="margin-top:8px">
+                <li>Git, GitHub</li>
+                <li>Figma (noções)</li>
+                <li>VS Code, ESLint, Prettier</li>
+                <li>Testes: Jest / Testing Library</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projetos">
+        <div class="card">
+          <h2>Projetos</h2>
+          <p class="muted">Apenas os melhores — destaque qualidade e impacto.</p>
+
+          <div class="projects-grid" style="margin-top:14px">
+            <!-- Projeto 1 -->
+            <article class="project-card">
+              <h3>Sistema de Gerenciamento de Vendas</h3>
+              <p class="muted">Sistema para controle de vendas, produtos e clientes, com fluxo completo de registros e consultas.</p>
+              <div class="project-tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+              </div>
+              <div style="margin-top:10px"><a class="small" href=https://github.com/blackwings73/-Sistema-de-Gerenciamento-de-Vendas target="_blank">Ver repositório</a></div>
+            </article>
+
+            <!-- Projeto 2 -->
+            <article class="project-card">
+    <h3>Sistema de Gerenciamento de Restaurante</h3>
+    <p class="muted">Sistema focado na organização de pedidos, mesas e cardápio, trazendo fluxo simples e funcional.</p>
+    <div class="project-tags">
+      <span class="tag">HTML</span>
+      <span class="tag">CSS</span>
+      <span class="tag">JavaScript</span>
+    </div>
+    <div style="margin-top:10px">
+      <a class="small" href="https://github.com/blackwings73/sistema-de-gerenciamento-de-restaurante" target="_blank">Ver repositório</a>
+    </div>
+  </article>
+
+  <!-- Projeto 3 -->
+  <article class="project-card">
+    <h3>Sistema de Gerenciamento de Eventos</h3>
+    <p class="muted">Sistema para cadastro e controle de eventos, participantes e datas, com interface organizada e intuitiva.</p>
+    <div class="project-tags">
+      <span class="tag">HTML</span>
+      <span class="tag">CSS</span>
+      <span class="tag">JavaScript</span>
+    </div>
+    <div style="margin-top:10px">
+      <a class="small" href="https://github.com/blackwings73/-Sistema-de-Gerenciamento-de-Eventos" target="_blank">Ver repositório</a>
+    </div>
+  </article>
+
+          </div>
+
+        </div>
+      </section>
+
+      <section id="contato">
+        <div class="card">
+          <h2>Contato</h2>
+          <div class="contact-grid">
+            <div>
+              <p class="muted">Curtiu? Vamos conversar. Envie uma mensagem ou me chame no LinkedIn.</p>
+              <ul style="list-style:none; padding:0; margin-top:10px">
+                <li><strong>LinkedIn:</strong> <a class="small" href=https://www.linkedin.com/in/brayan-e-costa-a321682a5 target="_blank">https://www.linkedin.com/in/brayan-e-costa-a321682a5 </a></li>
+                <li><strong>E-mail:</strong> <a class="small" href="mailto:brayan.costa.devsystem@gmail.com">brayan.costa.devsystem@gmail.com</a></li>
+                <li><strong>GitHub:</strong> <a class="small" href=https://github.com/blackwings73 target="_blank">https://github.com/blackwings73</a></li>
+              </ul>
+            </div>
+
+            <form id="contactForm" onsubmit="return handleSubmit(event)">
+              <label for="name">Nome</label>
+              <input id="name" name="name" type="text" required>
+
+              <label for="email">E-mail</label>
+              <input id="email" name="email" type="email" required>
+
+              <label for="message">Mensagem</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+
+              <button type="submit" class="btn" style="margin-top:12px">Enviar</button>
+              <div id="formMsg" class="muted" style="margin-top:8px"></div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="muted">© <span id="yr"></span> Seu Nome • <span class="small">Remoto • Flexível</span></div>
+    </footer>
+  </div>
+
+  <script>
+    // Small JS helpers: replace placeholders and handle form
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    function handleSubmit(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const msg = document.getElementById('message').value.trim();
+      if(!name || !email || !msg){
+        document.getElementById('formMsg').textContent = 'Preencha todos os campos.';
+        return false;
+      }
+      // fallback: open mail client with prefilled content
+      const subject = encodeURIComponent('Contato pelo portfólio - ' + name);
+      const body = encodeURIComponent(msg + '\n\n' + name + ' | ' + email);
+      window.location.href = 'mailto:seu.email@exemplo.com?subject=' + subject + '&body=' + body;
+      return false;
+    }
+  </script>
+</body>
+</html>
