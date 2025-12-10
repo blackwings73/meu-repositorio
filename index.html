@@ -41,7 +41,7 @@ INSTRUÇÕES RÁPIDAS DE DEPLOY
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Portfólio — Seu Nome</title>
+  <title>Portfólio — BRAYAN ESPINDOAL COSTA</title>
   <meta name="description" content="Portfólio profissional — Seu Nome. Projetos, habilidades e contato.">
   <style>
     :root{
@@ -132,7 +132,7 @@ INSTRUÇÕES RÁPIDAS DE DEPLOY
       <div class="brand">
         <div class="logo">SN</div>
         <div>
-          <div style="font-weight:800">Seu Nome</div>
+          <div style="font-weight:800">BRAYAN E. COSTA</div>
           <div class="small muted">Desenvolvedor(a) | Front-end • Full-stack</div>
         </div>
       </div>
@@ -318,25 +318,5 @@ INSTRUÇÕES RÁPIDAS DE DEPLOY
     </footer>
   </div>
 
-  <script>
-    // Small JS helpers: replace placeholders and handle form
-    document.getElementById('yr').textContent = new Date().getFullYear();
-
-    function handleSubmit(e){
-      e.preventDefault();
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const msg = document.getElementById('message').value.trim();
-      if(!name || !email || !msg){
-        document.getElementById('formMsg').textContent = 'Preencha todos os campos.';
-        return false;
-      }
-      // fallback: open mail client with prefilled content
-      const subject = encodeURIComponent('Contato pelo portfólio - ' + name);
-      const body = encodeURIComponent(msg + '\n\n' + name + ' | ' + email);
-      window.location.href = 'mailto:seu.email@exemplo.com?subject=' + subject + '&body=' + body;
-      return false;
-    }
-  </script>
 </body>
 </html>
